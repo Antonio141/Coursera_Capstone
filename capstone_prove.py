@@ -5,4 +5,3 @@ import seaborn as sns
 
 df = pd.read_csv('D:/personale/MACHINELEARNING/IBM/capstone/Data-Collisions.csv')
 
-print(df['JUNCTIONTYPE'].unique())
