@@ -1,3 +1,48 @@
+SEVERITYCODE      194673 non-null int64
+X                 189339 non-null float64
+Y                 189339 non-null float64
+OBJECTID          194673 non-null int64
+INCKEY            194673 non-null int64
+COLDETKEY         194673 non-null int64
+REPORTNO          194673 non-null object
+STATUS            194673 non-null object
+ADDRTYPE          192747 non-null object
+INTKEY            65070 non-null float64
+LOCATION          191996 non-null object
+EXCEPTRSNCODE     84811 non-null object
+EXCEPTRSNDESC     5638 non-null object
+SEVERITYCODE.1    194673 non-null int64
+SEVERITYDESC      194673 non-null object
+COLLISIONTYPE     189769 non-null object
+PERSONCOUNT       194673 non-null int64
+PEDCOUNT          194673 non-null int64
+PEDCYLCOUNT       194673 non-null int64
+VEHCOUNT          194673 non-null int64
+INCDATE           194673 non-null object
+INCDTTM           194673 non-null object
+JUNCTIONTYPE      188344 non-null object
+SDOT_COLCODE      194673 non-null int64
+SDOT_COLDESC      194673 non-null object
+INATTENTIONIND    29805 non-null object
+UNDERINFL         189789 non-null object
+WEATHER           189592 non-null object
+ROADCOND          189661 non-null object
+LIGHTCOND         189503 non-null object
+PEDROWNOTGRNT     4667 non-null object
+SDOTCOLNUM        114936 non-null float64
+SPEEDING          9333 non-null object
+ST_COLCODE        194655 non-null object
+ST_COLDESC        189769 non-null object
+SEGLANEKEY        194673 non-null int64
+CROSSWALKKEY      194673 non-null int64
+HITPARKEDCAR      194673 non-null object
+
+
+
+
+
+
+
 SEVERITYCODE    3-FATALITY 2B-SERIOUS INJURY 2-INJURY 1-PROP DAMAGE 0-UNKNOWN     
 X                 
 Y                 
@@ -11,25 +56,28 @@ INTKEY          KEY THAT CORRESPONDS TO INTERS. ASSOCIATED WITH COLLISION
 LOCATION        DESCRIPTION OF GENERAL LOCATION OF COLLISION PLACE      
 EXCEPTRSNCODE     
 EXCEPTRSNDESC         
-SEVERITYDESC      
+SEVERITYDESC    Detailed description of severity
 COLLISIONTYPE     
-PERSONCOUNT       
-PEDCOUNT          
-PEDCYLCOUNT       
-VEHCOUNT          
-INCDATE           
-INCDTTM           
-JUNCTIONTYPE      
-SDOT_COLCODE      
-SDOT_COLDESC      
-INATTENTIONIND    
-UNDERINFL         
-WEATHER           
-ROADCOND          
-LIGHTCOND         
-PEDROWNOTGRNT     
-SPEEDING          
-ST_COLDESC        
-SEGLANEKEY        
-CROSSWALKKEY      
-HITPARKEDCAR      
+PERSONCOUNT     number of people involved   
+PEDCOUNT        number of pedestrians involved
+PEDCYLCOUNT     number of bicycles involved 
+VEHCOUNT        number of vehicles involved  
+INJURIES        number of total injuries
+SERIOUSINJURIES number of total serious injuries
+FATALITIES      number of fatalities
+INCDATE         date of incident
+INCDTTM         date and time of incident          
+JUNCTIONTYPE    category of junction at which collision took place 
+SDOT_COLCODE    code given to collision given by SDOT  
+SDOT_COLDESC    description of collision correspondent to code 
+INATTENTIONIND  whether or not the collision was due to inattention 
+UNDERINFL       drug/alcohol influence (Y/N)
+WEATHER         weather during accident
+ROADCOND        road condition  
+LIGHTCOND       lights conditions  
+PEDROWNOTGRNT   pedestrian was on cross lines or not
+SPEEDING        speeding influenced incident (Y/N)
+ST_COLDESC      description corresponding to state coding designation
+SEGLANEKEY      key for lane segment in which collision occured   
+CROSSWALKKEY    key for crosswalk at which collision took place   
+HITPARKEDCAR    hit parked car (y/n)
