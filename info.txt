@@ -122,5 +122,45 @@ HITPARKEDCAR    hit parked car (y/n)
 'PEDALCYCLIST RAN OFF ROAD - HIT FIXED OBJECT',
 'PEDALCYCLIST STRUCK MOTOR VEHICLE RIGHT SIDE AT ANGLE'
 
-Entering at angle',
 
+
+# Metodo 1 per trovare rows con nan values in dataframe
+df1_nan = df1.isnull()
+rows_nan = df1_nan.any(axis=1)
+rows_nan = df1[rows_nan]
+
+# Metodo 2 per trovare rows con nan values in dataframe
+r, _ = np.where(df2.isna())
+r = np.unique(r).tolist()
+
+# Metodo per cercare parti di dataframe e ottenere value_counts
+df2[(df2['SDOT_COLDESC']=='MOTOR VEHICLE STRUCK PEDALCYCLIST, LEFT SIDE SIDESWIPE')
+   & (df2['COLLISIONTYPE'].isnull()) ]
+
+# Metodo per applicare una mask per il datframe per operare su di esso
+mask=\
+(df2['SDOT_COLDESC']=='MOTOR VEHICLE STRUCK PEDALCYCLIST, LEFT SIDE SIDESWIPE')& \
+     (df2['COLLISIONTYPE'].isnull())  
+
+df2['COLLISIONTYPE'][mask].value_counts()
+
+# Metodo per editare i valori nan e riempirli in una maniera che rifletta la percentuale di 
+  presenza dei valori non nan nella colonna, faccio questo perche seguire la statistisca non avendo
+  altre info è sempre meglio che non fare un cazzo questa è una funzione flessibile alla quale basta 
+  dare come input il dataframe e la colonna sulla quale vogliamo operare il fillna()
+  Abbastanza figa come funzione 
+
+# def fill_na_by_percentage(df, col):
+#     r, _ = np.where(df[[col]].isna())
+#     r = np.unique(r).tolist()
+#     l = len(r)
+#     print(l)
+
+#     ad = df[col].value_counts(normalize = True)
+#     # print(ad)
+#     for i in range(len(ad)):
+#         L = int(np.rint(l * ad[i]))
+#         print(L)
+#     #     df[col].fillna(ad.keys()[i], limit = L, inplace = True )
+
+# fill_na_by_percentage(df,'ROADCOND')
